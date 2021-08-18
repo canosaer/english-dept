@@ -3,14 +3,60 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge" />
-		<title> </title>
-		<meta name="description" content="" />
+		<title> Best English Department | Emory University Department of English</title>
+		<meta name="description" content="Emory's English department features vibrant academic programs in literary and cultural studies, creative writing, and rhetoric and composition." />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<link rel="stylesheet" href="dist/css/main.css" />
 	</head>
 
 	<body>
+		<main class="home-page display-grid">
+			<header class="intro">
+				<a class="intro__link" href="#"><img class="intro__logo" src="dist/img/logo.svg" alt="logo"></a>
+				<h1 class="intro__heading">Emory | College Of Arts And Sciences</h1>
+				<h2 class="intro__subheading">Department of English</h2>
+				<input type="checkbox" class="toggle__checkbox" name="toggle" id="toggle" aria-label="nav-menu-toggle" role="button">
+				<button class="search">
+					<img class="search__icon" src="dist/img/magnifying-glass.svg" alt="search">
+				</button>
+				<label for="toggle" class="toggle">
+					<div class="toggle__line toggle__line_1"></div>
+					<div class="toggle__line toggle__line_2"></div>
+					<div class="toggle__line toggle__line_3"></div>
+				</label>
+			</header>
+
+			<section class="hero">
+				<div class="hero__slide-1">
+					<figure class="hero__image hero__image_wheatley">
+						<h3 class="hero__heading">VIbrant Academic Programs</h3>
+						<div class="hero__line"></div>
+						<a class="hero__link" href="#">Learn More</a>
+					</figure>
+				</div>
+				<div class="hero__slide-2">
+					<figure class="hero__image hero__image_teacher">
+						<h3 class="hero__heading">World Class Faculty</h3>
+						<div class="hero__line"></div>
+						<a class="hero__link" href="#">Learn More</a>
+					</figure>
+				</div>
+				<div class="hero__slide-2">
+					<figure class="hero__image hero__image_class">
+						<h3 class="hero__heading">Engaging Classes</h3>
+						<div class="hero__line"></div>
+						<a class="hero__link" href="#">Learn More</a>
+					</figure>
+				</div>
+				<div class="slide-controls">
+					<i class="slide-controls__previous fas fa-arrow-left"></i>
+					<i class="slide-controls__pause fas fa-pause"></i>
+					<i class="slide-controls__next fas fa-arrow-right"></i>
+				</div>
+			</section>
+
+		</main>
 
 		<script src="dist/js/main.js"></script>
 	</body>
