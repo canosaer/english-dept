@@ -7,18 +7,19 @@
 		<meta name="description" content="Emory's English department features vibrant academic programs in literary and cultural studies, creative writing, and rhetoric and composition." />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+		<script src="https://kit.fontawesome.com/5290a709ed.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="dist/css/main.css" />
 	</head>
 
 	<body>
 		<main class="home-page display-grid">
-			<header class="intro">
+			<header class="intro" id="top">
 				<a class="intro__link" href="#"><img class="intro__logo" src="dist/img/logo.svg" alt="logo"></a>
 				<h1 class="intro__heading">Emory | College Of Arts And Sciences</h1>
 				<h2 class="intro__subheading">Department of English</h2>
 				<input type="checkbox" class="toggle__checkbox" name="toggle" id="toggle" aria-label="nav-menu-toggle" role="button">
 				<button class="search">
-					<img class="search__icon" src="dist/img/magnifying-glass.svg" alt="search">
+					<img class="search__icon" src="dist/img/magnifying-glass.svg" alt="search" role="button">
 				</button>
 				<label for="toggle" class="toggle">
 					<div class="toggle__line toggle__line_1"></div>
@@ -37,21 +38,21 @@
 			</header>
 
 			<section class="hero">
-				<div class="hero__slide-1">
+				<div class="hero__slide hero__slide_1">
 					<figure class="hero__image hero__image_wheatley">
 						<h3 class="hero__heading">Vibrant Academic Programs</h3>
 						<div class="hero__line"></div>
 						<a class="hero__link" href="#">Learn More</a>
 					</figure>
 				</div>
-				<div class="hero__slide-2">
+				<div class="hero__slide hero__slide_2 hidden">
 					<figure class="hero__image hero__image_teacher">
 						<h3 class="hero__heading">World Class Faculty</h3>
 						<div class="hero__line"></div>
 						<a class="hero__link" href="#">Learn More</a>
 					</figure>
 				</div>
-				<div class="hero__slide-2">
+				<div class="hero__slide hero__slide_3 hidden">
 					<figure class="hero__image hero__image_class">
 						<h3 class="hero__heading">Engaging Classes</h3>
 						<div class="hero__line"></div>
@@ -65,7 +66,160 @@
 				</div>
 			</section>
 
+			<section class="statistics">
+				<figure class="statistics__creative-writing">
+					<i class="statistics__outer-ring far fa-circle"></i>
+					<div class="stastistics__inner-circle">
+						<p class="stastistics__animated-number">#4</p>
+					</div>
+					<h3 class="statistics__heading">Best in the U.S. <span class="statistics__bold-text">Creative Writing Major</span></h3>
+					<p class="statistics__source">PrepScholar, 2021</p>
+				</figure>
+				<figure class="statistics__creative-writing">
+					<i class="statistics__outer-ring far fa-circle"></i>
+					<div class="stastistics__inner-circle">
+						<p class="stastistics__animated-number">#26</p>
+					</div>
+					<h3 class="statistics__heading">Best in the U.S. <span class="statistics__bold-text">English PhD</span></h3>
+					<p class="statistics__source">US News & World Report, 2021</p>
+				</figure>
+				<figure class="statistics__undergrad-major">
+					<i class="statistics__outer-ring far fa-circle"></i>
+					<div class="stastistics__inner-circle">
+						<p class="stastistics__animated-number">#41</p>
+					</div>
+					<h3 class="statistics__heading">Best in the U.S. <span class="statistics__bold-text">English Major</span></h3>
+					<p class="statistics__source">Niche, 2021</p>
+				</figure>
+			</section>
+
+			<section class="overview">
+				<h3 class="overview__heading">Discover<span class="overview__bold-text">English</span></h3>
+				<p class="overview__text">Emory's English department features vibrant academic programs in literary and cultural studies, creative writing, and rhetoric and composition. We are committed to training students to be excellent writers, readers, researchers, and interpreters of our changing world.</p>
+				<p class="overview__text">The English department is committed to promoting racial justice and the goals of the Black Lives Matter movement through our work as teachers, scholars, and lifelong learners. <a class="overview__link" href="#">Learn more</a> about our commitment.</p>
+			</section>
+
+			<section class="programs">
+				<h3 class="programs__heading">Explore <span class="programs__bold-text">Our Programs</span></h3>
+				<div class="programs__card-display">
+					<a class="programs__card" href="#">
+						<img class="programs__image" src="dist/img/undergrad.jpg" loading="lazy" alt="Phyllis Wheatley archival text from Rose Libary">
+						<div class="programs__text">
+							<h4 class="programs__heading">English Major</h4>
+							<p class="programs__link">Developing Critical Thinkers</p>
+						</div>
+					</a>
+					<a class="programs__card" href="#">
+						<img class="programs__image" src="dist/img/creative_writing.jpg" loading="lazy" alt="Photo of Salman Rushdie">
+						<div class="programs__text">
+							<h4 class="programs__heading">Creative Writing Major</h4>
+							<p class="programs__link">Cultivating Elegant Writers</p>
+						</div>
+					</a>
+					<a class="programs__card" href="#">
+						<img class="programs__image" src="dist/img/grad.jpg" loading="lazy" alt="Archival pulp text from Rose Libary">
+						<div class="programs__text">
+							<h4 class="programs__heading">English Ph.D.</h4>
+							<p class="programs__link">Empowering Innovative Researchers</p>
+						</div>
+					</a>
+				</div>
+			</section>
+
+			<section class="news">
+				<h3 class="news__heading">English <span class="news__bold-text">News</span></h3>
+				<div class="news__card-display">
+					<div class="news__card">
+						<a class="news__image-slot">
+							<img class="news__image" src="dist/img/news_1.jpeg" alt="two men at a conference">
+						</a>
+						<p class="news__date">August 27, 2021</p>
+						<a class="news__link" href="#">Three Vital Takeaways from the MLA Conference</a>
+					</div>
+					<div class="news__card">
+						<a class="news__image-slot">
+							<img class="news__image" src="dist/img/news_2.jpeg" alt="marble building on Emory campus">
+						</a>
+						<p class="news__date">August 24, 2021</p>
+						<a class="news__link" href="#">Zero Tolerance for Racist & Anti-Semitic Behavior</a>
+					</div>
+					<div class="news__card">
+						<a class="news__image-slot">
+							<img class="news__image" src="dist/img/news_3.jpeg" alt="exhibit at Rose Library">
+						</a>
+						<p class="news__date">August 23, 2021</p>
+						<a class="news__link" href="#">Rose Library Acquires Winston Johnson Archive</a>
+					</div>
+					<div class="news__card">
+						<a class="news__image-slot">
+							<img class="news__image" src="dist/img/news_4.jpeg" alt="photo of famous writer">
+						</a>
+						<p class="news__date">August 21, 2021</p>
+						<a class="news__link" href="#">New Book Out by Professor Jonathan Goldberg</a>
+					</div>
+				</div>
+				<a class="news__button" href="#">All News</a>
+			</section>
+
+			<section class="events">
+				<h3 class="events__heading">English <span class="events__bold-text">Events</span></h3>
+				<div class="events__card-display">
+					<div class="events__card">
+						<p class="events__day">Thursday</p>
+						<p class="events__month">September</p>
+						<p class="events__date">02</p>
+						<a class="events__link" href="#">Lunch and Learn with the English Department</a>
+					</div>
+					<div class="events__card">
+						<p class="events__day">Thursday</p>
+						<p class="events__month">September</p>
+						<p class="events__date">16</p>
+						<a class="events__link" href="#">Women Authors Virtual Speaker Series: Fireside Chat with Margaret Atwood</a>
+					</div>
+					<div class="events__card">
+						<p class="events__day">Thursday</p>
+						<p class="events__month">September</p>
+						<p class="events__date">23</p>
+						<a class="events__link" href="#">Lecture by Dr. Gina Caison</a>
+					</div>
+				</div>
+				<a class="events_button" href="#">All Events</a>
+			</section>
 		</main>
+
+		<footer class="outro">
+			<a class="outro__link" href="#">
+				<img class="outro__logo" src="dist/img/logo.svg" alt="logo">
+				<h3 class="outro__heading">Emory | College Of Arts And Sciences</h3>
+				<h4 class="outro__subheading">Department of English</h4>
+			</a>
+			<h5 class="outro__emory">Emory University</h5>
+			<a class="outro__about" href="#">About Us</a>
+			<a class="outro__emory-home" href="#">Emory Home</a>
+			<a class="outro__campus-map" href="#">Campus Map</a>
+			<p class="outro__address">537 Kilgo Circle</p>
+			<p class="outro__city-state-zip">Atlanta, GA 30322</p>
+			<a class="outro__get-directions" href="#">Get Directions</a>
+			<p class="outro__email"><span class="outro__bold-text">Email</span>: english@emory.edu</p>
+			<p class="outro__phone"><span class="outro__bold-text">Phone</span>: 404-727=6420</p>
+
+			<ul class="social-media">
+				<li class="social-media__item">
+					<a class="social-media__link" href="#" target="_blank"><i class="social-media__icon fab fa-facebook-square"></i></a>
+				</li>
+				<li class="social-media__item">
+					<a class="social-media__link" href="#" target="_blank"><i class="social-media__icon fab fa-youtube"></i></a>
+				</li>
+				<li class="social-media__item">
+					<a class="social-media__link" href="#" target="_blank"><i class="social-media__icon fab fa-twitter"></i></a>
+				</li>
+			</ul>
+
+			<div class="bottom-row">
+				<p class="bottom-row__copyright">&#169; 2021 Emory University's Department of English</p>
+				<a class="bottom-row__back-to-top" href="#top">Back to Top</a>
+			</div>
+		</footer>
 
 		<script src="dist/js/main.js"></script>
 	</body>
