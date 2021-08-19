@@ -22,6 +22,7 @@ TABLE OF CONTENTS:
 	--heading-font: 'Spectral', serif;
 	--emory-blue: rgb(1, 33, 105);
 	--dark-blue: rgb(12, 35, 64);
+	--filter-blue: rgba(1, 33, 105, 0.45);
 }
 
 /* 1. Appearance ============================= */
@@ -45,7 +46,7 @@ body{
 .intro{
 	@include mixins.default-grid;
 	grid-template-columns: minmax(3.1rem, 0.1fr) minmax(0, 1fr) minmax(3.1rem, 0.1fr) minmax(3.1rem, 0.1fr);
-	border-bottom: 2px solid white;
+	border-bottom: 1px solid white;
 
 	&__link{
 		grid-row: 1/3;
@@ -55,7 +56,7 @@ body{
 
 	&__logo{
 		@include mixins.default-img;
-		width: 1.8rem;
+		width: 1.85rem;
 		height: 2rem;
 		margin: auto;
 	}
@@ -154,7 +155,26 @@ body{
 }
 
 
+.hero{
+	@include mixins.default-grid;
 
+	&__slide{
+		@include mixins.image-slot;
+	}
+
+	&__image{
+		@include mixins.cover-parent;
+		width: 100%;
+		height: 45rem;
+		
+		&_wheatley{
+			background: url(../../dist/img/hero_wheatley.jpg), var(--filter-blue);
+			@include mixins.default-background;
+			background-blend-mode: hard-light;
+			background-position: left;
+		}
+	}
+}
 
 /* 2. Utility ================================ */
 
