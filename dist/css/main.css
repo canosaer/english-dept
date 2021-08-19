@@ -153,6 +153,7 @@ TABLE OF CONTENTS:
   --emory-blue: rgb(1, 33, 105);
   --dark-blue: rgb(12, 35, 64);
   --filter-blue: rgba(1, 33, 105, 0.45);
+  --gold: rgb(227, 164, 76);
 }
 
 /* 1. Appearance ============================= */
@@ -300,6 +301,7 @@ body {
   grid-auto-rows: auto;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
+  height: 45rem;
 }
 .hero__slide {
   height: 0;
@@ -337,6 +339,61 @@ body {
   font-weight: bold;
   line-height: 1.1;
   width: 80%;
+}
+.hero__line {
+  background: var(--gold);
+  width: 12.5rem;
+  height: 0.375rem;
+  margin: 1rem 0 2.5rem;
+}
+.hero__link {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.7em;
+  width: 10rem;
+  text-align: center;
+  transition: background-color 250ms ease-in-out;
+}
+.hero__link:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.slide-controls {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  z-index: 2;
+  -ms-grid-row-align: flex-end;
+  -ms-grid-column-align: right;
+  place-self: flex-end right;
+  margin-bottom: 1rem;
+}
+.slide-controls__previous {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.slide-controls__pause {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.slide-controls__next {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.statistics {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+}
+.statistics__creative-writing, .statistics__phd, .statistics__undergrad-major {
+  position: relative;
 }
 
 /* 2. Utility ================================ */

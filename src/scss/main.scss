@@ -23,6 +23,7 @@ TABLE OF CONTENTS:
 	--emory-blue: rgb(1, 33, 105);
 	--dark-blue: rgb(12, 35, 64);
 	--filter-blue: rgba(1, 33, 105, 0.45);
+	--gold: rgb(227, 164, 76);
 }
 
 /* 1. Appearance ============================= */
@@ -157,6 +158,7 @@ body{
 
 .hero{
 	@include mixins.default-grid;
+	height: 45rem;
 
 	&__slide{
 		@include mixins.image-slot;
@@ -187,6 +189,64 @@ body{
 		line-height: 1.1;
 		width: 80%;
 	}
+
+	&__line{
+		background: var(--gold);
+		width: 12.5rem;
+		height: 0.375rem;
+		margin: 1rem 0 2.5rem;
+	}
+
+	&__link{
+		background-color: rgba(255, 255, 255, 0.25);
+		color: white;
+		border: 1px solid white;
+		border-radius: 0.5rem;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 0.7em;
+		width: 10rem;
+		text-align: center;
+		transition: background-color 250ms ease-in-out;
+
+		&:hover{
+			background-color: rgba(255, 255, 255, 0);
+		}
+	}
+}
+
+.slide-controls{
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	z-index: 2;
+	place-self: flex-end right;
+	margin-bottom: 1rem;
+
+	&__previous{
+		cursor: pointer;
+		margin-right: 1rem;
+	}
+
+	&__pause{
+		cursor: pointer;
+		margin-right: 1rem;
+	}
+
+	&__next{
+		cursor: pointer;
+		margin-right: 1rem;
+	}
+}
+
+.statistics{
+	@include mixins.default-grid;
+
+	&__creative-writing, &__phd, &__undergrad-major{
+		position: relative;
+	}
+
+	
 }
 
 /* 2. Utility ================================ */
