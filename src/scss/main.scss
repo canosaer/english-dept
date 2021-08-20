@@ -24,7 +24,7 @@ TABLE OF CONTENTS:
 	--dark-blue: rgb(12, 35, 64);
 	--filter-blue: rgba(1, 33, 105, 0.45);
 	--gold: rgb(227, 164, 76);
-
+	--yellow: rgb(242, 169, 0);
 }
 
 /* 1. Appearance ============================= */
@@ -82,7 +82,6 @@ body{
 }
 
 .toggle{
-
 	grid-column: 4/5;
 	grid-row: 1/3;
 	display: flex;
@@ -241,6 +240,7 @@ body{
 
 .statistics{
 	@include mixins.default-grid;
+	margin-bottom: 6rem;
 
 	&__creative-writing, &__phd, &__undergrad-major{
 		position: relative;
@@ -290,14 +290,10 @@ body{
 
 	&__heading{
 		grid-row: 2/3;
-		text-align: center;
 		font-size: 1.75rem;
-		text-transform: uppercase;
-		color: var(--emory-blue);
-		transform: scale(1, 1.1);
 		margin: 0.75rem 2rem;
-		line-height: 1.1;
-		letter-spacing: -0.01rem;
+		@include mixins.heading-format;
+		color: rgb(1, 33, 105);
 	}
 
 	&__bold-text{
@@ -312,7 +308,82 @@ body{
 		margin-bottom: 0.75rem;
 	}
 
+}
 
+.overview{
+	@include mixins.default-grid;
+	padding: 0 2rem;
+	margin-bottom: 2.5rem;
+
+	&__heading{
+		@include mixins.heading-format;
+		color: rgb(1, 33, 105);
+		font-size: 2.25rem;
+		margin-bottom: 1.5rem;
+	}
+
+	&__bold-text{
+		display: block;
+		font-weight: bold;
+	}
+
+	&__text{
+		color: rgba(0,0,0, 0.8);
+		line-height: 1.5;
+		font-size: 1.15rem;
+		text-align: center;
+		margin-bottom: 1.25rem;
+	}
+
+	&__link{
+		color: var(--emory-blue);
+		font-weight: bold;
+	}
+}
+
+.programs{
+	@include mixins.default-grid;
+
+	&__heading{
+		color: white;
+		width: 94%;
+		justify-self: center;
+		position: relative;
+		padding: 1.5rem;
+		@include mixins.heading-format;
+		font-size: 1.85rem;
+
+		&:before{
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 0;
+			background: var(--emory-blue);
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+
+		&:after{
+			content: "";
+			position: absolute;
+			right: -1rem;
+			top: -1rem;
+			background: rgba(242, 169, 0, 0.7);
+			width: 100%;
+			height: 100%;
+			z-index: -2;
+		}
+	}
+
+	&__bold-text{
+		display: block;
+		font-weight: bold;
+	}
+
+	&__image{
+		display: none;
+	}
 }
 
 /* 2. Utility ================================ */
