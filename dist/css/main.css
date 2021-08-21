@@ -529,6 +529,8 @@ body {
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   margin-bottom: 10rem;
+  overflow-y: hidden;
+  padding-top: 1.4rem;
 }
 .programs__heading {
   color: white;
@@ -625,6 +627,12 @@ body {
   position: absolute;
   bottom: 0;
   height: 45%;
+  color: #414751;
+  padding: 1rem;
+}
+.programs__subheading {
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 /* 2. Utility ================================ */

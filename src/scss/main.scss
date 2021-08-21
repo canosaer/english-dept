@@ -345,6 +345,8 @@ body{
 .programs{
 	@include mixins.default-grid;
 	margin-bottom: 10rem;
+	overflow-y: hidden;
+	padding-top: 1.4rem;
 
 	&__heading{
 		color: white;
@@ -433,6 +435,13 @@ body{
 		position: absolute;
 		bottom: 0;
 		height: 45%;
+		color: rgb(65, 71, 81);
+		padding: 1rem;
+	}
+
+	&__subheading{
+		font-weight: bold;
+		font-size: 2rem;
 	}
 }
 
