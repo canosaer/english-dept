@@ -294,6 +294,7 @@ body{
 		margin: 0.75rem 2rem;
 		@include mixins.heading-format;
 		color: rgb(1, 33, 105);
+		transform: scale(1, 1.1);
 	}
 
 	&__bold-text{
@@ -343,6 +344,7 @@ body{
 
 .programs{
 	@include mixins.default-grid;
+	margin-bottom: 10rem;
 
 	&__heading{
 		color: white;
@@ -352,6 +354,7 @@ body{
 		padding: 1.5rem;
 		@include mixins.heading-format;
 		font-size: 1.85rem;
+		transform: scale(1, 1.1);
 
 		&:before{
 			content: "";
@@ -381,8 +384,55 @@ body{
 		font-weight: bold;
 	}
 
+	&__card-display{
+		@include mixins.default-grid;
+		padding: 3%;
+		grid-column-gap: 3%;
+		grid-row-gap: 7rem;
+		justify-content: center;
+    	grid-template-columns: repeat(auto-fit, minmax(23rem, 0.75fr));
+	}
+
+	&__card{
+		@include mixins.image-slot;
+		padding-bottom: 115%;
+
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: -1.25rem;
+			border-bottom: dashed 3px var(--emory-blue);
+			width: 100%;
+			cursor: default;
+		}
+
+		&:after{
+			content: "";
+			position: absolute;
+			bottom: -4.25rem;
+			width: 100%;
+			height: 2.15rem;
+			background: var(--emory-blue);
+			cursor: default;
+		}
+	}
+
 	&__image{
-		display: none;
+		@include mixins.cover-parent;
+		@include mixins.default-img;
+		
+		&_cw{
+			object-position: left;
+		}
+	}
+
+	&__text{
+		background: white;
+		width: 85%;
+		z-index: 1;
+		position: absolute;
+		bottom: 0;
+		height: 45%;
 	}
 }
 
