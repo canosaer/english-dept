@@ -581,12 +581,12 @@ body {
   grid-column-gap: 3%;
   grid-row-gap: 7rem;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(23rem, 0.75fr));
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 0.7fr));
 }
 .programs__card {
   height: 0;
   position: relative;
-  padding-bottom: 115%;
+  padding-bottom: 100%;
 }
 .programs__card:before {
   content: "";
@@ -621,7 +621,7 @@ body {
      object-position: left;
 }
 .programs__text {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   width: 85%;
   z-index: 1;
   position: absolute;
