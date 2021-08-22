@@ -316,7 +316,7 @@ body{
 .overview{
 	@include mixins.default-grid;
 	padding: 0 2rem;
-	margin-bottom: 2.5rem;
+	margin-bottom: 5rem;
 
 	&__heading{
 		@include mixins.heading-format;
@@ -346,7 +346,7 @@ body{
 .programs{
 	@include mixins.default-grid;
 	margin-bottom: 5rem;
-	overflow-y: hidden;
+	overflow: hidden;
 	padding: 1.4rem 0 2.85rem;
 
 	&__heading{
@@ -434,7 +434,7 @@ body{
 .news{
 	@include mixins.default-grid;
 	margin-bottom: 5rem;
-	overflow-y: hidden;
+	overflow: hidden;
 	padding: 1.4rem 0 2.85rem;
 
 	&__heading{
@@ -499,7 +499,9 @@ body{
 		background: var(--emory-blue);
 		color: white;
 		text-transform: uppercase;
-		padding: 1rem 9rem;
+		padding: 1rem 0rem;
+		width: 19.1rem;
+		text-align: center;
 		border-radius: 0.8rem;
 		font-weight: bold;
 		transition: all 200ms ease-in-out;
@@ -604,11 +606,10 @@ body{
 	}
 
 	&__button{
-		justify-self: center;
 		background: var(--emory-blue);
 		color: white;
 		text-transform: uppercase;
-		padding: 1rem 9rem;
+		padding: 1rem 0rem;
 		border-radius: 0.8rem;
 		font-weight: bold;
 		transition: all 200ms ease-in-out;
@@ -616,6 +617,8 @@ body{
 		left: 50%;
 		transform: translateX(-50%);
 		bottom: -1.5rem;
+		width: 19.1rem;
+		text-align: center;
 
 		&:hover{
 			color: var(--yellow);

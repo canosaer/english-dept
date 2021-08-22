@@ -497,7 +497,7 @@ body {
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   padding: 0 2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
 }
 .overview__heading {
   text-align: center;
@@ -531,7 +531,7 @@ body {
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   margin-bottom: 5rem;
-  overflow-y: hidden;
+  overflow: hidden;
   padding: 1.4rem 0 2.85rem;
 }
 .programs__heading {
@@ -657,7 +657,7 @@ body {
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   margin-bottom: 5rem;
-  overflow-y: hidden;
+  overflow: hidden;
   padding: 1.4rem 0 2.85rem;
 }
 .news__heading {
@@ -769,7 +769,9 @@ body {
   background: var(--emory-blue);
   color: white;
   text-transform: uppercase;
-  padding: 1rem 9rem;
+  padding: 1rem 0rem;
+  width: 19.1rem;
+  text-align: center;
   border-radius: 0.8rem;
   font-weight: bold;
   transition: all 200ms ease-in-out;
@@ -893,12 +895,10 @@ body {
   top: -1rem;
 }
 .events__button {
-  -ms-grid-column-align: center;
-      justify-self: center;
   background: var(--emory-blue);
   color: white;
   text-transform: uppercase;
-  padding: 1rem 9rem;
+  padding: 1rem 0rem;
   border-radius: 0.8rem;
   font-weight: bold;
   transition: all 200ms ease-in-out;
@@ -907,6 +907,8 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: -1.5rem;
+  width: 19.1rem;
+  text-align: center;
 }
 .events__button:hover {
   color: var(--yellow);
