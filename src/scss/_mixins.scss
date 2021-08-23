@@ -110,3 +110,19 @@
     text-decoration: underline;
   }
 }
+
+@mixin outro-text{
+  width: 95%;
+  text-align: center;
+  color: white;
+  transform: scale(1,1.1);
+  justify-self: center;
+}
+
+@mixin outro-link{
+  margin-top: 0.75rem;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
