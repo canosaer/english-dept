@@ -540,7 +540,8 @@ body{
 	&__card-display{
 		@include mixins.default-grid;
 		padding: 5rem 3%;
-		gap: 2rem;
+		grid-column-gap: 3%;
+		grid-row-gap: 2rem;
 		justify-content: center;
     	grid-template-columns: repeat(auto-fit, minmax(15rem, 0.9fr));
 	}
@@ -626,6 +627,35 @@ body{
 		}
 	}
 
+}
+
+.outro{
+	@include mixins.default-grid;
+	position: relative;
+	background: rgb(65, 71, 81);
+
+	&__link{
+		@include mixins.default-grid;
+		grid-template-columns: minmax(0, 0.25fr) minmax(3.1rem, 0.25fr) minmax(0, 1fr) minmax(0, 0.25fr)
+	}
+
+	&__logo{
+		@include default-img;
+		grid-column: 2/3;
+		grid-row: 1/3;
+		margin: auto;
+		
+	}
+
+	&__heading{
+		grid-column: 3/4;
+		grid-row: 1/2;
+	}
+
+	&__subheading{
+		grid-column: 3/4;
+		grid-row: 2/3;
+	}
 }
 
 /* 2. Utility ================================ */
