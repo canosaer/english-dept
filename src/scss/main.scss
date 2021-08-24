@@ -254,7 +254,11 @@ body{
 		transform: scale(1, 1.1);
 		font-weight: bold;
 		line-height: 1.1;
-		width: 80%;
+		max-width: 38rem;
+
+		@include mixins.medium-screen{
+			font-size: 3.25rem;
+		}
 	}
 
 	&__line{
@@ -445,6 +449,8 @@ body{
 	@include mixins.default-grid;
 	padding: 0 2rem;
 	margin-bottom: 5rem;
+	max-width: 80rem;
+	justify-self: center;
 
 	&__heading{
 		@include mixins.heading-format;
@@ -463,6 +469,10 @@ body{
 		font-size: 1.15rem;
 		text-align: center;
 		margin-bottom: 1.25rem;
+
+		@include mixins.medium-screen{
+			font-size: 1.35rem;
+		}
 	}
 
 	&__link{
@@ -477,13 +487,32 @@ body{
 	overflow: hidden;
 	padding: 1.4rem 0 2.85rem;
 
+	@include mixins.medium-screen{
+		grid-template-columns: 1fr minmax(0,80rem) 1fr;
+	}
+
 	&__heading{
 		@include mixins.heading-format;
 		@include mixins.section-heading-format;
+
+		@include mixins.landscape{
+			font-size: 2.75rem;
+			text-align: right;
+			padding-right: 5rem;
+		}
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
+		
 	}
 
 	&__bold-text{
 		@include mixins.default-bold-text;
+
+		@include mixins.landscape{
+			display: unset;
+		}
 	}
 
 	&__card-display{
@@ -493,6 +522,10 @@ body{
 		grid-row-gap: 7rem;
 		justify-content: center;
     	grid-template-columns: repeat(auto-fit, minmax(23rem, 0.7fr));
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
 	}
 
 	&__card{
@@ -548,6 +581,7 @@ body{
 		font-weight: bold;
 		font-size: 2rem;
 		line-height: 1.1;
+		
 	}
 
 	&__caption{
@@ -565,13 +599,31 @@ body{
 	overflow: hidden;
 	padding: 1.4rem 0 2.85rem;
 
+	@include mixins.medium-screen{
+		grid-template-columns: 1fr minmax(0,80rem) 1fr;
+	}
+
 	&__heading{
 		@include mixins.section-heading-format;
 		@include mixins.heading-format;
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
+
+		@include mixins.landscape{
+			font-size: 2.75rem;
+			text-align: left;
+			padding-left: 5rem;
+		}
 	}
 
 	&__bold-text{
 		@include mixins.default-bold-text;
+
+		@include mixins.landscape{
+			display: unset;
+		}
 	}
 
 	&__card-display{
@@ -579,7 +631,11 @@ body{
 		padding: 2rem 3%;
 		gap: 2rem;
 		justify-content: center;
-    	grid-template-columns: repeat(auto-fit, minmax(19rem, 0.7fr));
+    	grid-template-columns: repeat(auto-fit, minmax(17rem, 0.7fr));
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
 	}
 
 	&__card{
@@ -634,6 +690,10 @@ body{
 		font-weight: bold;
 		transition: all 200ms ease-in-out;
 
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
+
 		&:hover{
 			color: var(--yellow);
 			filter: brightness(1.1);
@@ -644,8 +704,12 @@ body{
 .events{
 	@include mixins.default-grid;
 	position: relative;
-	border: 3px solid var(--emory-blue);
+	
 	margin: 0 3% 5rem;
+
+	@include mixins.medium-screen{
+		grid-template-columns: 1fr minmax(0,75rem) 1fr;
+	}
 
 	&__heading{
 		@include mixins.heading-format;
@@ -659,10 +723,23 @@ body{
 		top: -1rem;
 		background: white;
 
+		@include mixins.landscape{
+			font-size: 2.75rem;
+			width: 25rem;
+			top: -1.5rem;
+		}
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
 	}
 
 	&__bold-text{
 		@include mixins.default-bold-text;
+
+		@include mixins.landscape{
+			display: unset;
+		}
 	}
 
 	&__card-display{
@@ -672,6 +749,11 @@ body{
 		grid-row-gap: 2.3rem;
 		justify-content: center;
     	grid-template-columns: repeat(auto-fit, minmax(15rem, 0.9fr));
+		border: 3px solid var(--emory-blue);
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
 	}
 
 	&__card{
@@ -748,6 +830,10 @@ body{
 		bottom: -1.5rem;
 		width: 19.1rem;
 		text-align: center;
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
 
 		&:hover{
 			color: var(--yellow);
