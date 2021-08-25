@@ -132,3 +132,68 @@
 	letter-spacing: -0.01rem;
 }
 
+@mixin generic-display-section{
+  margin-bottom: 5rem;
+	overflow: hidden;
+	padding: 1.4rem 0 2.85rem;
+}
+
+@mixin generic-landscape-heading{
+  font-size: 2.75rem;
+  text-align: right;
+  padding-right: 5rem;
+}
+
+@mixin generic-card-display{
+  padding: 2rem 3%;
+  grid-column-gap: 3%;
+  grid-row-gap: 7rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 0.7fr));
+}
+
+@mixin generic-dotted-line{
+  content: "";
+  position: absolute;
+  bottom: -1.25rem;
+  border-bottom: dashed 3px var(--emory-blue);
+  width: 100%;
+  cursor: default;
+}
+
+@mixin generic-blue-bar{
+  content: "";
+  position: absolute;
+  bottom: -4.25rem;
+  width: 100%;
+  height: 2.15rem;
+  background: var(--emory-blue);
+  cursor: default;
+}
+
+@mixin generic-text{
+  background: rgba(255, 255, 255, 0.9);
+  width: 80%;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  height: 45%;
+  color: var(--gray);
+  padding: 1rem;
+  transition: height 400ms ease-in-out;
+}
+
+@mixin generic-subheading{
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.1;
+  position: relative;
+}
+
+@mixin generic-caption{
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  padding-right: 3rem;
+  line-height: 1.1;
+}
