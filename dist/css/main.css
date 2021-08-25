@@ -1585,6 +1585,7 @@ body {
   grid-row-gap: 7rem;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(23rem, 0.7fr));
+  grid-template-columns: repeat(auto-fit, minmax(21.35rem, 0.4fr));
 }
 @media (min-width: 1024px) {
   .people__card-display {

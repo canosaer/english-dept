@@ -1117,6 +1117,7 @@ body{
 	&__card-display{
 		@include mixins.default-grid;
 		@include mixins.generic-card-display;
+		grid-template-columns: repeat(auto-fit, minmax(21.35rem, 0.4fr));
 
 		@include mixins.medium-screen{
 			grid-column: 2/3;
