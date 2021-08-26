@@ -543,13 +543,22 @@ body {
   cursor: pointer;
   margin-right: 1rem;
 }
+.slide-controls__previous:hover {
+  color: var(--yellow);
+}
 .slide-controls__pause {
   cursor: pointer;
   margin-right: 1rem;
 }
+.slide-controls__pause:hover {
+  color: var(--yellow);
+}
 .slide-controls__next {
   cursor: pointer;
   margin-right: 1rem;
+}
+.slide-controls__next:hover {
+  color: var(--yellow);
 }
 
 .statistics {

@@ -339,16 +339,28 @@ body{
 	&__previous{
 		cursor: pointer;
 		margin-right: 1rem;
+
+		&:hover{
+			color: var(--yellow);
+		}
 	}
 
 	&__pause{
 		cursor: pointer;
 		margin-right: 1rem;
+
+		&:hover{
+			color: var(--yellow);
+		}
 	}
 
 	&__next{
 		cursor: pointer;
 		margin-right: 1rem;
+
+		&:hover{
+			color: var(--yellow);
+		}
 	}
 }
 
