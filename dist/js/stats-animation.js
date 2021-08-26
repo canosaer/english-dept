@@ -1,2 +1,0 @@
-class StatsAnimation{constructor(){this.animate()}animate=()=>{document.querySelectorAll(".statistics__outer-circle").forEach((t=>{let i=gsap.timeline();i.to(t,{minWidth:"14rem",minHeight:"14rem",duration:.4,ease:"sine.inOut"}),i.to(t,{minWidth:"13rem",minHeight:"13rem",duration:.4,ease:"sine.inOut"})}))}}new StatsAnimation;
-//# sourceMappingURL=stats-animation.js.map
