@@ -197,3 +197,10 @@
   padding-right: 3rem;
   line-height: 1.1;
 }
+
+@mixin open-line{
+  background: rgba(242, 169, 0, 0.7);;
+  position: absolute;
+  top: 0.75rem;
+  right: 0;
+}
