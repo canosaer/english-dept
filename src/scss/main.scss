@@ -815,22 +815,12 @@ body{
 	background: rgb(65, 71, 81);
 	overflow: hidden;
 
-	// @include mixins.landscape{
-	// 	grid-template-columns: 0.15fr 1fr 1fr 1fr 0.15fr;
-	// }
-
 	&__link{
 		@include mixins.default-grid;
 		padding: 4rem 1rem 0;
 		color: white;
 		place-self: center center;
 		grid-template-rows: max-content;
-
-		// @include mixins.landscape{
-		// 	place-self: center flex-start;
-		// 	padding: 4rem 1rem 2rem 0;
-		// 	grid-column: 2/5;
-		// }
 	}
 
 	&__logo{
@@ -868,13 +858,6 @@ body{
 		position: relative;
 		margin-top: 5rem;
 
-		// @include mixins.landscape{
-		// 	margin-top: 2rem;
-		// 	grid-column: 2/3;
-		// 	grid-row: 6/7;
-		// 	text-align: left;
-		// }
-
 		&:before{
 			content: "";
 			width: 100%;
@@ -883,10 +866,6 @@ body{
 			position: absolute;
 			border-bottom: 1px solid white;
 			transform: translateX(-50%);
-
-			// @include mixins.landscape{
-			// 	display: none;
-			// }
 		}
 	}
 
@@ -894,95 +873,41 @@ body{
 		@include mixins.outro-text;
 		@include mixins.outro-link;
 		margin-top: 1rem;
-
-		// @include mixins.landscape{
-		// 	grid-column: 2/3;
-		// 	grid-row: 7/8;
-		// 	text-align: left;
-		// 	margin-top: 0.75rem;
-		// }
-
 	}
 
 	&__emory-home{
 		@include mixins.outro-text;
 		@include mixins.outro-link;
-
-		// @include mixins.landscape{
-		// 	grid-column: 2/3;
-		// 	grid-row: 8/9;
-		// 	text-align: left;
-		// }
 	}
 
 	&__campus-map{
 		@include mixins.outro-text;
 		@include mixins.outro-link;
-
-		// @include mixins.landscape{
-		// 	grid-column: 2/3;
-		// 	grid-row: 9/10;
-		// 	text-align: left;
-		// }
 	}
 
 	&__get-directions{
 		@include mixins.outro-text;
 		@include mixins.outro-link;
-
-		// @include mixins.landscape{
-		// 	grid-column: 2/3;
-		// 	grid-row: 4/5;
-		// 	text-align: left;
-		// }
 	}
 
 	&__address{
 		@include mixins.outro-text;
 		margin-top: 2.9rem;
-
-		// @include mixins.landscape{
-		// 	margin-top: unset;
-		// 	grid-column: 2/3;
-		// 	grid-row: 2/3;
-		// 	text-align: left;
-		// }
 	}
 
 	&__email{
 		@include mixins.outro-text;
 		margin-top: 2.9rem;
-
-		// @include mixins.landscape{
-		// 	grid-column: 4/5;
-		// 	grid-row: 2/3;
-		// 	text-align: left;
-		// 	margin-top: unset;
-		// }
-
 	}
 
 	&__city-state-zip{
 		@include mixins.outro-text;
 		margin-top: 0.75rem;
-
-		// @include mixins.landscape{
-		// 	grid-column: 2/3;
-		// 	grid-row: 3/4;
-		// 	text-align: left;
-		// }
-
 	}
 
 	&__phone{
 		@include mixins.outro-text;
 		margin-top: 0.75rem;
-
-		// @include mixins.landscape{
-		// 	grid-column: 4/5;
-		// 	grid-row: 3/4;
-		// 	text-align: left;
-		// }
 	}
 
 	&__email-link{
@@ -1004,13 +929,6 @@ body{
 	display: flex;
 	justify-content: center;
 	margin: 2rem 0 4.25rem;
-
-	// @include mixins.landscape{
-	// 	grid-column: 2/3;
-	// 	grid-row: 10/11;
-	// 	justify-content: left;
-	// 	padding-left: 2.8%;
-	// }
 
 	&__icon{
 		color: white;
@@ -1035,22 +953,11 @@ body{
 	position: relative;
 	padding-bottom: 5rem;
 
-	// @include mixins.landscape{
-	// 	grid-column: 1/-1;
-	// 	grid-row: 11/12;
-	// 	grid-template-columns: 0.15fr 1fr 1fr 1fr 0.15fr;
-	// }
-
 	&__copyright{
 		@include mixins.outro-text;
 		font-size: 0.85rem;
 		opacity: 0.7;
 		line-height: 1.4;
-
-		// @include mixins.landscape{
-		// 	grid-column: 2/3;
-		// 	text-align: left;
-		// }
 	}
 
 	&:before{
@@ -1069,12 +976,6 @@ body{
 		font-size: 0.85rem;
 		opacity: 0.7;
 		margin-top: 1.5rem;
-
-		// @include mixins.landscape{
-		// 	margin-top: unset;
-		// 	grid-column: 4/5;
-		// 	text-align: right;
-		// }
 	}
 }
 
@@ -1166,6 +1067,11 @@ body{
 	@include mixins.default-grid;
 	margin-bottom: 1.5rem;
 
+	@include mixins.medium-screen{
+		grid-template-columns: 1fr minmax(0,75rem) 1fr;
+		padding: 2rem 5rem 0rem;
+	}
+
 	&__image{
 		@include mixins.default-img;
 		border-radius: 999rem;
@@ -1174,6 +1080,16 @@ body{
 		justify-self: center;
 		width: 10rem;
 		height: 10rem;
+
+		@include mixins.medium-screen{
+			grid-row: 1/2;
+			grid-column: 2/3;
+			place-self: center flex-start;
+			width: 16rem;
+			height: 16rem;
+		}
+
+
 	}
 
 	&__heading{
@@ -1182,6 +1098,15 @@ body{
 		font-size: 2.3rem;
 		color: var(--emory-blue);
 		margin-bottom: 0.7rem;
+
+		@include mixins.medium-screen{
+			grid-row: 1/2;
+			grid-column: 2/3;
+			place-self: flex-start flex-start;
+			margin: 2rem 0 0 19rem;
+			font-size: 3rem;
+			@include mixins.stretch-font;
+		}
 	}
 
 	&__bold-text{
@@ -1196,6 +1121,14 @@ body{
 		max-width: 20rem;
 		justify-self: center;
 		margin-bottom: 0.7rem;
+
+		@include mixins.medium-screen{
+			grid-row: 1/2;
+			grid-column: 2/3;
+			place-self: flex-start flex-start;
+			margin: 6rem 0 0 19rem;
+			font-size: 1.5rem;
+		}
 	}
 
 	&__contact{
@@ -1207,6 +1140,14 @@ body{
 		text-transform: uppercase;
 		font-weight: bold;
 		position: relative;
+
+		@include mixins.medium-screen{
+			grid-row: 1/2;
+			grid-column: 2/3;
+			place-self: flex-start flex-start;
+			margin: 9.5rem 0 0 19rem;
+			width: 10.3rem;
+		}
 
 		&:hover{
 			background: var(--emory-blue);
@@ -1231,6 +1172,11 @@ body{
 	padding: 6rem 1.5rem 0;
 	color: var(--gray);
 
+	@include mixins.medium-screen{
+		grid-template-columns: 1fr minmax(0,75rem) 1fr;
+		padding: 8rem 5rem 0;
+	}
+
 	&:before{
 		content: "";
 		position: absolute;
@@ -1252,12 +1198,21 @@ body{
 		font-size: 1.75rem;
 		@include mixins.stretch-font;
 		margin-bottom: 1rem;
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+			font-size: 2.5rem;
+		}
 	}
 
 	&__text{
 		line-height: 1.5;
 		margin-bottom: 5rem;
 		font-size: 1.05rem;
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
 	}
 }
 
