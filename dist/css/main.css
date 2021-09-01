@@ -398,6 +398,7 @@ body {
   padding: 4rem 0 0 3.7rem;
   transition: width 200ms ease-in-out;
   z-index: 3;
+  overflow-x: hidden;
 }
 @media (min-width: 768px) {
   .menu {
@@ -459,6 +460,7 @@ body {
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   height: 45rem;
+  overflow: hidden;
 }
 @media (min-width: 1024px) {
   .hero {
@@ -487,6 +489,21 @@ body {
 }
 .hero__image_wheatley {
   background: url(../../dist/img/hero_wheatley.jpg), var(--filter-blue);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: hard-light;
+  background-position: left;
+}
+.hero__image_teacher {
+  background: url(../../dist/img/hero_teacher.jpg), rgba(0, 0, 0, 0.25);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-position: center;
+  height: 45rem;
+}
+.hero__image_class {
+  background: url(../../dist/img/hero_class.jpg), var(--filter-blue);
   background-size: cover;
   background-position: center;
   background-blend-mode: hard-light;

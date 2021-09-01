@@ -11,7 +11,7 @@ class NavFixer{
   }
 
   fixNav = () => {
-    if(window.innerWidth >= 1200){
+    if(window.innerWidth >= 768){
       this.navMenu.style.width = '100%'
       let dimmerElement = document.querySelector('.dimmer')
       if(dimmerElement) dimmerElement.remove()

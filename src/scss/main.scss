@@ -51,6 +51,7 @@ body{
 .intro{
 	@include mixins.default-grid;
 	grid-template-columns: minmax(3.1rem, 0.1fr) minmax(0, 1fr) minmax(3.1rem, 0.1fr) minmax(3.1rem, 0.1fr);
+	
 
 	@include mixins.landscape{
 		grid-template-columns: 7.8rem minmax(0, 1fr);
@@ -205,6 +206,7 @@ body{
 	padding: 4rem 0 0 3.7rem;
 	transition: width 200ms ease-in-out;
 	z-index: 3;
+	overflow-x:hidden;
 
 	@include mixins.landscape{
 		@include mixins.default-grid;
@@ -264,6 +266,8 @@ body{
 .hero{
 	@include mixins.default-grid;
 	height: 45rem;
+	overflow:hidden;
+	
 
 	@include mixins.medium-screen{
 		margin-bottom: 22rem;
@@ -283,6 +287,21 @@ body{
 		
 		&_wheatley{
 			background: url(../../dist/img/hero_wheatley.jpg), var(--filter-blue);
+			@include mixins.default-background;
+			background-blend-mode: hard-light;
+			background-position: left;
+		}
+
+		&_teacher{
+			background: url(../../dist/img/hero_teacher.jpg), rgba(0,0,0,0.25);
+			@include mixins.default-background;
+			background-blend-mode: darken;
+			background-position: center;
+			height: 45rem;
+		}
+
+		&_class{
+			background: url(../../dist/img/hero_class.jpg), var(--filter-blue);
 			@include mixins.default-background;
 			background-blend-mode: hard-light;
 			background-position: left;

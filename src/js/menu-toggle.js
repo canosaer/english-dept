@@ -51,7 +51,6 @@ class MenuToggle{
                 this.siteNavigationItems.forEach(item => {
                   item.classList.toggle(`menu__item_open`)
                 });
-                document.querySelector(`body`).style.overflowX = `visible`
             }, 200);                
         }
     }
