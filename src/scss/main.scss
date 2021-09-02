@@ -275,6 +275,12 @@ body{
 	}
 
 	&__slide{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__image-slot{
 		@include mixins.image-slot;
 	}
 
@@ -309,6 +315,12 @@ body{
 		}
 	}
 
+	&__text{
+		position: absolute;
+		top: 40%;
+		left: 2rem;
+	}
+
 	&__heading{
 		color: white;
 		text-transform: uppercase;
@@ -331,19 +343,23 @@ body{
 	}
 
 	&__link{
-		background-color: rgba(255, 255, 255, 0.25);
+		background-color: var(--emory-blue);
 		color: white;
-		border: 1px solid white;
 		border-radius: 0.5rem;
 		text-transform: uppercase;
 		font-weight: bold;
 		padding: 0.7em;
 		width: 10rem;
 		text-align: center;
-		transition: background-color 250ms ease-in-out;
+		transition: all 200ms ease-in-out;
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
 
 		&:hover{
-			background-color: rgba(255, 255, 255, 0);
+			background-color: rgba(255,255,255,0.95);
+			color: var(--emory-blue);
 		}
 	}
 }

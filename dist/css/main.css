@@ -469,6 +469,11 @@ body {
   }
 }
 .hero__slide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.hero__image-slot {
   height: 0;
   position: relative;
 }
@@ -510,6 +515,11 @@ body {
   background-blend-mode: hard-light;
   background-position: left;
 }
+.hero__text {
+  position: absolute;
+  top: 40%;
+  left: 2rem;
+}
 .hero__heading {
   color: white;
   text-transform: uppercase;
@@ -532,19 +542,26 @@ body {
   margin: 1rem 0 2.5rem;
 }
 .hero__link {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: var(--emory-blue);
   color: white;
-  border: 1px solid white;
   border-radius: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
   padding: 0.7em;
   width: 10rem;
   text-align: center;
-  transition: background-color 250ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+@media (min-width: 1024px) {
+  .hero__link {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
 }
 .hero__link:hover {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--emory-blue);
 }
 
 .slide-controls {
