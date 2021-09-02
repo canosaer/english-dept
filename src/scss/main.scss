@@ -267,6 +267,7 @@ body{
 	@include mixins.default-grid;
 	height: 45rem;
 	overflow:hidden;
+	position: relative;
 	
 
 	@include mixins.medium-screen{
@@ -352,8 +353,10 @@ body{
 	justify-content: space-between;
 	color: white;
 	z-index: 2;
-	place-self: flex-end right;
 	margin-bottom: 1rem;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 
 	&__previous{
 		cursor: pointer;

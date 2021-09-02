@@ -461,6 +461,7 @@ body {
   grid-template-columns: 1fr;
   height: 45rem;
   overflow: hidden;
+  position: relative;
 }
 @media (min-width: 1024px) {
   .hero {
@@ -551,10 +552,10 @@ body {
   justify-content: space-between;
   color: white;
   z-index: 2;
-  -ms-grid-row-align: flex-end;
-  -ms-grid-column-align: right;
-  place-self: flex-end right;
   margin-bottom: 1rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 .slide-controls__previous {
   cursor: pointer;

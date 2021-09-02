@@ -67,7 +67,7 @@ class Carousel{
                 height: "45rem",
                 duration: 0.01,
             })
-            setTimeout(() => {  this.slides[i].classList.toggle('hidden') }, 1600)
+            setTimeout(() => {  this.slides[this.activeSlide].classList.toggle('hidden') }, 1600)
         }
 
 
