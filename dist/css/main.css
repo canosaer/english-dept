@@ -1941,7 +1941,7 @@ body {
   -ms-grid-row-span: 1;
   grid-row: 2/3;
 }
-.contact__first-name {
+.contact__input {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
