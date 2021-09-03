@@ -1844,6 +1844,7 @@ body {
   -ms-grid-column-align: center;
       justify-self: center;
   margin-bottom: 0.7rem;
+  position: relative;
 }
 @media (min-width: 1024px) {
   .summary__subheading {
@@ -1898,6 +1899,52 @@ body {
   right: 0.65rem;
   top: 0.45rem;
   font-size: 1.05rem;
+}
+
+.contact {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  position: absolute;
+  background: white;
+  padding: 2rem;
+  top: 6.2rem;
+  left: 0;
+  z-index: 1;
+  border: 2px solid var(--emory-blue);
+  border-radius: 0.7rem;
+  width: 50vw;
+  text-align: left;
+}
+.contact__heading {
+  font-weight: bold;
+  grid-column: 1/-1;
+}
+.contact__heading {
+  font-weight: bold;
+  text-align: left;
+  grid-column: 1/-1;
+}
+.contact__label {
+  color: var(--gray);
+  font-size: 1.25rem;
+}
+.contact__label_last-name {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+.contact__first-name {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
 }
 
 .biography {

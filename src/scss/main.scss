@@ -1213,6 +1213,7 @@ body{
 		max-width: 20rem;
 		justify-self: center;
 		margin-bottom: 0.7rem;
+		position: relative;
 
 		@include mixins.medium-screen{
 			grid-row: 1/2;
@@ -1255,6 +1256,47 @@ body{
 			top: 0.45rem;
 			font-size: 1.05rem;
 		}
+	}
+}
+
+.contact{
+	@include mixins.default-grid;
+	grid-template-columns: repeat(2, minmax(0,1fr));
+	position: absolute;
+	background: white;
+	padding: 2rem;
+	top: 6.2rem;
+	left: 0;
+	z-index: 1;
+	border: 2px solid var(--emory-blue);
+	border-radius: 0.7rem;
+	width: 50vw;
+	text-align: left;
+
+	&__heading{
+		font-weight: bold;
+		
+		grid-column: 1/-1;
+	}
+
+	&__heading{
+		font-weight: bold;
+		text-align: left;
+		grid-column: 1/-1;
+	}
+	
+	&__label{
+		color: var(--gray);
+		font-size: 1.25rem;
+
+		&_last-name{
+			grid-column: 2/3;
+			grid-row: 2/3;
+		}
+	}
+
+	&__first-name{
+		grid-column: 1/2;
 	}
 }
 
