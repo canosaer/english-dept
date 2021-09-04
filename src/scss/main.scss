@@ -1233,6 +1233,9 @@ body{
 		text-transform: uppercase;
 		font-weight: bold;
 		position: relative;
+		outline: none;
+		background: unset;
+		cursor: pointer;
 
 		@include mixins.medium-screen{
 			grid-row: 1/2;
@@ -1261,43 +1264,107 @@ body{
 
 .contact{
 	@include mixins.default-grid;
-	grid-template-columns: repeat(2, minmax(0,1fr));
 	position: absolute;
 	background: white;
 	padding: 2rem;
-	top: 6.2rem;
-	left: 0;
+	top: 5.65rem;
+	left: -9rem;
 	z-index: 1;
 	border: 2px solid var(--emory-blue);
 	border-radius: 0.7rem;
-	width: 50vw;
+	width: 31.25rem;
 	text-align: left;
 
-	&__heading{
-		font-weight: bold;
-		
-		grid-column: 1/-1;
+	@include mixins.medium-screen{
+		left: 0;
+		top: 6.25rem;
+		width: 37.5rem;
+	}
+
+	&__compose-message{
+		@include mixins.default-grid;
+		grid-template-columns: repeat(2, minmax(0,1fr));
 	}
 
 	&__heading{
 		font-weight: bold;
+		margin-bottom: 1.5rem;
 		text-align: left;
-		grid-column: 1/-1;
+
+		&_success{
+			margin: 0rem;
+		}
 	}
 	
 	&__label{
 		color: var(--gray);
 		font-size: 1.25rem;
+		margin-bottom: 0.2rem;
 
 		&_last-name{
 			grid-column: 2/3;
-			grid-row: 2/3;
+			grid-row: 1/2;
+			margin-left: 0.5rem;
 		}
 	}
 
 	&__input{
-		grid-column: 1/2;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		outline: none;
+		border-bottom: 1px solid var(--emory-blue);
+		margin-bottom: 1.5rem;
+		padding: 0.6rem 0.6rem 0.6rem 0;
+		font-size: 1.25rem;
+
+		&_first-name{
+			margin-right: 0.5rem;
+		}
+
+		&_last-name{
+			margin-left: 0.5rem;
+		}
+
+		&_email{
+			grid-column: 1/-1;
+		}
+
+		&_message{
+			grid-column: 1/-1;
+			padding: 0.6rem 0.6rem 0.6rem 0;
+			font-size: 1.25rem;
+			resize: none;
+			height: 120px;
+
+		}
 	}
+
+	&__send{
+		grid-column: 1/-1;
+		place-self: center center;
+		background: var(--emory-blue);
+		color: white;
+		border: none;
+		outline: none;
+		border-radius: 999rem;
+		padding: 0.75rem 4rem;
+		font-size: 1.1rem;
+		cursor: pointer;
+
+		&:hover{
+			filter: brightness(1.25);
+		}
+	}
+
+	&__error{
+		grid-column: 1/-1;
+		text-align: center;
+		color: red;
+		font-size: 0.9rem;
+		margin-top: 0.75rem;
+	}
+	
 }
 
 .biography{

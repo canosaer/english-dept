@@ -1871,6 +1871,9 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   position: relative;
+  outline: none;
+  background: unset;
+  cursor: pointer;
 }
 @media (min-width: 1024px) {
   .summary__contact {
@@ -1907,44 +1910,105 @@ body {
   grid-auto-rows: auto;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
-  -ms-grid-columns: (minmax(0, 1fr))[2];
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   position: absolute;
   background: white;
   padding: 2rem;
-  top: 6.2rem;
-  left: 0;
+  top: 5.65rem;
+  left: -9rem;
   z-index: 1;
   border: 2px solid var(--emory-blue);
   border-radius: 0.7rem;
-  width: 50vw;
+  width: 31.25rem;
   text-align: left;
+}
+@media (min-width: 1024px) {
+  .contact {
+    left: 0;
+    top: 6.25rem;
+    width: 37.5rem;
+  }
+}
+.contact__compose-message {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .contact__heading {
   font-weight: bold;
-  grid-column: 1/-1;
-}
-.contact__heading {
-  font-weight: bold;
+  margin-bottom: 1.5rem;
   text-align: left;
-  grid-column: 1/-1;
+}
+.contact__heading_success {
+  margin: 0rem;
 }
 .contact__label {
   color: var(--gray);
   font-size: 1.25rem;
+  margin-bottom: 0.2rem;
 }
 .contact__label_last-name {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-row-span: 1;
-  grid-row: 2/3;
+  grid-row: 1/2;
+  margin-left: 0.5rem;
 }
 .contact__input {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  border-bottom: 1px solid var(--emory-blue);
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 0.6rem 0.6rem 0;
+  font-size: 1.25rem;
+}
+.contact__input_first-name {
+  margin-right: 0.5rem;
+}
+.contact__input_last-name {
+  margin-left: 0.5rem;
+}
+.contact__input_email {
+  grid-column: 1/-1;
+}
+.contact__input_message {
+  grid-column: 1/-1;
+  padding: 0.6rem 0.6rem 0.6rem 0;
+  font-size: 1.25rem;
+  resize: none;
+  height: 120px;
+}
+.contact__send {
+  grid-column: 1/-1;
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  place-self: center center;
+  background: var(--emory-blue);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 999rem;
+  padding: 0.75rem 4rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.contact__send:hover {
+  -webkit-filter: brightness(1.25);
+          filter: brightness(1.25);
+}
+.contact__error {
+  grid-column: 1/-1;
+  text-align: center;
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
 }
 
 .biography {
