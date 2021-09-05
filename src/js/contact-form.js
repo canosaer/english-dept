@@ -75,8 +75,11 @@ class ContactForm{
         
     }
 
-    handleContactClick = () => {
-        this.contactForm.classList.toggle('hidden')
+    handleContactClick = (evt) => {
+        if(window.innerWidth >= 500){
+            evt.preventDefault()
+            this.contactForm.classList.toggle('hidden')
+        }
     }
 
 }
