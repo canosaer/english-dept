@@ -1,0 +1,216 @@
+@use 'variables';
+@use 'mixins';
+
+.intro{
+	@include mixins.default-grid;
+	grid-template-columns: minmax(3.1rem, 0.1fr) minmax(0, 1fr) minmax(3.1rem, 0.1fr) minmax(3.1rem, 0.1fr);
+	
+
+	@include mixins.landscape{
+		grid-template-columns: 7.8rem minmax(0, 1fr);
+		grid-template-rows: max-content;
+	}
+
+	&__link{
+		grid-row: 1/3;
+		background: var(--emory-blue);
+		@include mixins.default-grid;
+
+		@include mixins.landscape{
+			padding: 1.5rem 0;
+			grid-row: 1/4;
+		}
+	}
+
+	&__logo{
+		@include mixins.default-img;
+		width: 1.85rem;
+		margin: auto;
+
+		@include mixins.landscape{
+			width: 4.55rem;
+		}
+	}
+
+	&__heading{
+		font-family: var(--heading-font);
+		font-size: 1.15rem;
+		text-transform: uppercase;
+		letter-spacing: -0.05rem;
+		margin-top: auto;
+		padding: 0.5rem 1rem 0 1rem;
+		line-height: 1.1;
+
+		@include mixins.landscape{
+			margin-top: 0.5rem;
+		}
+	}
+
+	&__subheading{
+		grid-column: 2/3;
+		margin-bottom: auto;
+		padding: 0.15rem 1rem 0.5rem 1rem;
+		font-size: 0.9rem;
+		font-weight: bold;
+
+		@include mixins.landscape{
+			@include mixins.stretch-font;
+			font-size: 1.5rem;
+			font-weight: bold;
+			padding-top: 0.4rem;
+		}
+	}
+}
+
+.toggle{
+	grid-column: 4/5;
+	grid-row: 1/3;
+	display: flex;
+	flex-direction: column;
+	width: 2rem;
+	height: 1.8rem;
+	cursor: pointer;
+	position: relative;
+	z-index: 4;
+	justify-content: space-between;
+	margin: auto 0.35rem;
+
+	@include mixins.landscape{
+		display: none;
+	}
+
+	&__checkbox{
+		grid-column: 4/5;
+		grid-row: 1/3;
+		position: absolute;
+		right: 1.2rem;
+		transform: scale(2);
+		top: 1rem;
+		opacity:0;
+
+		@include mixins.landscape{
+			display: none;
+		}
+	}
+
+	&__line{
+		width: 100%;
+		height: 0.25rem;
+		background: var(--dark-blue);
+		transition: transform 200ms ease-in-out, color 200ms ease-in-out, visibility 50ms ease-in-out;
+
+
+		&_open-1{
+			@include mixins.open-line;
+			transform: rotate(45deg);
+		}
+
+		&_open-2{
+			@include mixins.open-line;
+			transform: rotate(-45deg);
+		}
+
+		&_open-3{
+			position: absolute;
+			visibility: hidden;
+		}
+	}
+
+	
+	
+}
+
+.search{
+	grid-column: 3/4;
+	grid-row: 1/3;
+	cursor: pointer;
+	background: none;
+	border: none;
+	@include mixins.default-grid;
+
+	&__icon{
+		width: 2rem;
+		height: 2rem;
+		margin: auto;
+
+		@include mixins.landscape{
+			&:hover{
+				filter: invert(58%) sepia(86%) saturate(1539%) hue-rotate(9deg) brightness(106%) contrast(102%);
+			}
+		}
+	}
+
+	@include mixins.landscape{
+		grid-row:3/4;
+		background: #f2f2f0;
+		padding: 0 1.5vw 0 0;
+	}
+}
+
+.menu{
+	position: absolute;
+	visibility: hidden;
+	width: 0rem;
+	opacity: 0;
+	right: 0;
+	top: 0;
+	height: 100vh;
+	@include mixins.default-grid;
+	padding: 4rem 0 0 3.7rem;
+	transition: width 200ms ease-in-out;
+	z-index: 3;
+	overflow-x:hidden;
+
+	@include mixins.landscape{
+		@include mixins.default-grid;
+		grid-column:2/3;
+		background: #f2f2f0;
+		position: unset;
+		width: unset;
+		opacity: unset;
+		right: unset;
+		top: unset;
+		height: unset;
+		padding: unset;
+		transition: unset;
+		visibility: unset;
+	}
+
+	&__list{
+
+		@include mixins.landscape{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 1.25rem;
+			max-width: 40rem;
+		}
+	}
+
+	&__link{
+		text-transform: uppercase;
+		color: black;
+		@include mixins.stretch-font;
+		font-weight: bold;
+
+		&:hover{
+			color: var(--yellow);
+		}
+	}
+
+	&_open{
+		background: white;
+		width: 20.6rem;
+		opacity: 1;
+		visibility: unset;
+	}
+
+	&__item{
+
+		&_open{
+			margin-top: 3rem;
+			text-align: left;
+		}
+
+	}
+}

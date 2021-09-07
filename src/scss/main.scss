@@ -7,8 +7,9 @@ AUTHOR:		Eric Canosa
 TABLE OF CONTENTS:
 
 0. Initialization
-1. Appearance
-2. Utility
+1. General Styles
+2. Partials
+3. Utility
 
 ==============================================
 */
@@ -18,18 +19,14 @@ TABLE OF CONTENTS:
 @use 'variables';
 @use 'mixins';
 
-:root {
-	--heading-font: 'Spectral', serif;
-	--emory-blue: rgb(1, 33, 105);
-	--dark-blue: rgb(12, 35, 64);
-	--filter-blue: rgba(1, 33, 105, 0.45);
-	--gold: rgb(227, 164, 76);
-	--yellow: rgb(242, 169, 0);
-	--gray: rgb(65, 71, 81);
-	--light-yellow: rgba(242, 169, 0, 0.7);
-}
+/* 2. Partials ================================ */
+@use 'header';
+@use 'hero';
+@use 'statistics';
 
-/* 1. Appearance ============================= */
+
+
+/* 1. General Styles ============================= */
 
 *, *::before, *::after {
 	box-sizing: border-box;
@@ -48,494 +45,6 @@ body{
 	position: relative;
 }
 
-.intro{
-	@include mixins.default-grid;
-	grid-template-columns: minmax(3.1rem, 0.1fr) minmax(0, 1fr) minmax(3.1rem, 0.1fr) minmax(3.1rem, 0.1fr);
-	
-
-	@include mixins.landscape{
-		grid-template-columns: 7.8rem minmax(0, 1fr);
-		grid-template-rows: max-content;
-	}
-
-	&__link{
-		grid-row: 1/3;
-		background: var(--emory-blue);
-		@include mixins.default-grid;
-
-		@include mixins.landscape{
-			padding: 1.5rem 0;
-			grid-row: 1/4;
-		}
-	}
-
-	&__logo{
-		@include mixins.default-img;
-		width: 1.85rem;
-		margin: auto;
-
-		@include mixins.landscape{
-			width: 4.55rem;
-		}
-	}
-
-	&__heading{
-		font-family: var(--heading-font);
-		font-size: 1.15rem;
-		text-transform: uppercase;
-		letter-spacing: -0.05rem;
-		margin-top: auto;
-		padding: 0.5rem 1rem 0 1rem;
-		line-height: 1.1;
-
-		@include mixins.landscape{
-			margin-top: 0.5rem;
-		}
-	}
-
-	&__subheading{
-		grid-column: 2/3;
-		margin-bottom: auto;
-		padding: 0.15rem 1rem 0.5rem 1rem;
-		font-size: 0.9rem;
-		font-weight: bold;
-
-		@include mixins.landscape{
-			@include mixins.stretch-font;
-			font-size: 1.5rem;
-			font-weight: bold;
-			padding-top: 0.4rem;
-		}
-	}
-}
-
-.toggle{
-	grid-column: 4/5;
-	grid-row: 1/3;
-	display: flex;
-	flex-direction: column;
-	width: 2rem;
-	height: 1.8rem;
-	cursor: pointer;
-	position: relative;
-	z-index: 4;
-	justify-content: space-between;
-	margin: auto 0.35rem;
-
-	@include mixins.landscape{
-		display: none;
-	}
-
-	&__checkbox{
-		grid-column: 4/5;
-		grid-row: 1/3;
-		position: absolute;
-		right: 1.2rem;
-		transform: scale(2);
-		top: 1rem;
-		opacity:0;
-
-		@include mixins.landscape{
-			display: none;
-		}
-	}
-
-	&__line{
-		width: 100%;
-		height: 0.25rem;
-		background: var(--dark-blue);
-		transition: transform 200ms ease-in-out, color 200ms ease-in-out, visibility 50ms ease-in-out;
-
-
-		&_open-1{
-			@include mixins.open-line;
-			transform: rotate(45deg);
-		}
-
-		&_open-2{
-			@include mixins.open-line;
-			transform: rotate(-45deg);
-		}
-
-		&_open-3{
-			position: absolute;
-			visibility: hidden;
-		}
-	}
-
-	
-	
-}
-
-.search{
-	grid-column: 3/4;
-	grid-row: 1/3;
-	cursor: pointer;
-	background: none;
-	border: none;
-	@include mixins.default-grid;
-
-	&__icon{
-		width: 2rem;
-		height: 2rem;
-		margin: auto;
-
-		@include mixins.landscape{
-			&:hover{
-				filter: invert(58%) sepia(86%) saturate(1539%) hue-rotate(9deg) brightness(106%) contrast(102%);
-			}
-		}
-	}
-
-	@include mixins.landscape{
-		grid-row:3/4;
-		background: #f2f2f0;
-		padding: 0 1.5vw 0 0;
-	}
-}
-
-.menu{
-	position: absolute;
-	visibility: hidden;
-	width: 0rem;
-	opacity: 0;
-	right: 0;
-	top: 0;
-	height: 100vh;
-	@include mixins.default-grid;
-	padding: 4rem 0 0 3.7rem;
-	transition: width 200ms ease-in-out;
-	z-index: 3;
-	overflow-x:hidden;
-
-	@include mixins.landscape{
-		@include mixins.default-grid;
-		grid-column:2/3;
-		background: #f2f2f0;
-		position: unset;
-		width: unset;
-		opacity: unset;
-		right: unset;
-		top: unset;
-		height: unset;
-		padding: unset;
-		transition: unset;
-		visibility: unset;
-	}
-
-	&__list{
-
-		@include mixins.landscape{
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 0 1.25rem;
-			max-width: 40rem;
-		}
-	}
-
-	&__link{
-		text-transform: uppercase;
-		color: black;
-		@include mixins.stretch-font;
-		font-weight: bold;
-
-		&:hover{
-			color: var(--yellow);
-		}
-	}
-
-	&_open{
-		background: white;
-		width: 20.6rem;
-		opacity: 1;
-		visibility: unset;
-	}
-
-	&__item{
-
-		&_open{
-			margin-top: 3rem;
-			text-align: left;
-		}
-
-	}
-}
-
-
-.hero{
-	@include mixins.default-grid;
-	height: 45rem;
-	overflow:hidden;
-	position: relative;
-	
-
-	@include mixins.medium-screen{
-		margin-bottom: 22rem;
-	}
-
-	&__slide{
-		position: absolute;
-		height: 100%;
-		width: 100%;
-	}
-
-	&__image-slot{
-		@include mixins.image-slot;
-	}
-
-	&__image{
-		@include mixins.cover-parent;
-		@include mixins.default-grid;
-		align-content: center;
-		padding: 1.5%;
-		width: 100%;
-		height: 45rem;
-		
-		&_wheatley{
-			background: url(../../dist/img/hero_wheatley.jpg), var(--filter-blue);
-			@include mixins.default-background;
-			background-blend-mode: hard-light;
-			background-position: left;
-		}
-
-		&_teacher{
-			background: url(../../dist/img/hero_teacher.jpg), rgba(0,0,0,0.25);
-			@include mixins.default-background;
-			background-blend-mode: darken;
-			background-position: center;
-			height: 45rem;
-		}
-
-		&_class{
-			background: url(../../dist/img/hero_class.jpg), var(--filter-blue);
-			@include mixins.default-background;
-			background-blend-mode: hard-light;
-			background-position: left;
-		}
-	}
-
-	&__text{
-		position: absolute;
-		top: 40%;
-		left: 2rem;
-	}
-
-	&__heading{
-		color: white;
-		text-transform: uppercase;
-		font-size: 2.5rem;
-		transform: scale(1, 1.1);
-		font-weight: bold;
-		line-height: 1.1;
-		max-width: 38rem;
-
-		@include mixins.medium-screen{
-			font-size: 3.25rem;
-		}
-	}
-
-	&__line{
-		background: var(--gold);
-		width: 12.5rem;
-		height: 0.375rem;
-		margin: 1rem 0 2.5rem;
-	}
-
-	&__link{
-		background-color: var(--emory-blue);
-		color: white;
-		border-radius: 0.5rem;
-		text-transform: uppercase;
-		font-weight: bold;
-		padding: 0.7em;
-		width: 10rem;
-		text-align: center;
-		transition: all 200ms ease-in-out;
-
-		@include mixins.medium-screen{
-			grid-column: 2/3;
-		}
-
-		&:hover{
-			background-color: rgba(255,255,255,0.95);
-			color: var(--emory-blue);
-		}
-	}
-}
-
-.slide-controls{
-	display: flex;
-	justify-content: space-between;
-	color: white;
-	z-index: 2;
-	margin-bottom: 1rem;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-
-	&__previous{
-		cursor: pointer;
-		margin-right: 1rem;
-
-		&:hover{
-			color: var(--yellow);
-		}
-	}
-
-	&__pause{
-		cursor: pointer;
-		margin-right: 1rem;
-
-		&:hover{
-			color: var(--yellow);
-		}
-	}
-
-	&__next{
-		cursor: pointer;
-		margin-right: 1rem;
-
-		&:hover{
-			color: var(--yellow);
-		}
-	}
-}
-
-.statistics{
-	@include mixins.default-grid;
-	margin-bottom: 6rem;
-
-	@include mixins.landscape{
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		padding: 0 3%;
-
-		&__creative-writing{
-			grid-row: 1/2;
-			grid-column: 1/2;
-		}
-
-		&__phd{
-			grid-row: 1/2;
-			grid-column: 2/3;
-		}
-
-		&__undergrad-major{
-			grid-row: 1/2;
-			grid-column: 3/4;
-		}
-	}
-
-	@include mixins.medium-screen{
-		position: absolute;
-		top: 43rem;
-		width: 85%;
-		max-width: 80rem;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	&__creative-writing, &__phd, &__undergrad-major{
-		position: relative;
-		@include mixins.default-grid;
-		grid-template-rows: minmax(16rem, 42vw) auto auto;
-
-		@include mixins.landscape{
-			grid-template-rows: 15.9rem auto auto;
-		}
-	}
-
-	&__outer-circle{
-		position: absolute;
-		left: 50%;
-		top: 8%;
-		transform: translateX(-50%);
-		border-radius: 999rem;
-		width: 36vw;
-		height: 36vw;
-		min-width: 13rem;
-		min-height: 13rem;
-		@include mixins.default-grid;
-
-		&_yellow{
-			border: 0.4rem solid rgba(242, 169, 0, 0.5);
-
-			@include mixins.medium-screen{
-				border: 0.4rem solid rgba(242, 169, 0, 1);
-			}
-		}
-
-		&_blue{
-			border: 0.4rem solid rgba(65, 182, 230, 0.5);
-
-			@include mixins.medium-screen{
-				border: 0.4rem solid rgba(65, 182, 230, 1);
-			}
-		}
-
-		@include mixins.landscape{
-			width: 13rem;
-			height: 13rem;
-		}
-	}
-
-	&__inner-circle{
-		width: 31vw;
-		height: 31vw;
-		min-width: 11rem;
-		min-height: 11rem;
-		background: var(--emory-blue);
-		@include mixins.default-grid;
-		border-radius: 999rem;
-		place-self: center center;
-
-		@include mixins.landscape{
-			width: 11rem;
-			height: 11rem;
-		}
-	}
-
-	&__animated-number{
-		color: white;
-		place-self: center center;
-		font-size: 3.5rem;
-
-		@include mixins.landscape{
-			font-size: 3rem;
-		}
-	}
-
-	&__heading{
-		grid-row: 2/3;
-		font-size: 1.75rem;
-		margin: 0.75rem 2rem;
-		@include mixins.heading-format;
-		color: rgb(1, 33, 105);
-		transform: scale(1, 1.1);
-
-		@include mixins.landscape{
-			place-self: center center;
-			margin-bottom: 1rem;
-		}
-	}
-
-	&__bold-text{
-		font-weight: bold;
-	}
-
-	&__source{
-		grid-row: 3/4;
-		text-align: center;
-		color: rgba(0,0,0, 0.8);
-		letter-spacing: -0.01rem;
-		margin-bottom: 0.75rem;
-
-		@include mixins.landscape{
-			place-self: flex-end center;
-		}
-	}
-
-}
 
 .overview{
 	@include mixins.default-grid;
@@ -1462,8 +971,11 @@ body{
 		}
 
 		&_books{
+			font-size: 1.75rem;
+			font-weight: unset;
+
 			@include mixins.medium-screen{
-				margin-bottom: 0.75rem;
+				font-size: 2.5rem;
 				grid-column: 1/2;
 			}
 		}
@@ -1488,6 +1000,7 @@ body{
 			grid-row: 2/5;
 			margin-top: 10rem;
 			margin-bottom: unset;
+			z-index: 0;
 		}
 	}
 
@@ -1495,7 +1008,7 @@ body{
 		@include mixins.medium-screen{
 			grid-column:1/2;
 			grid-row: 4/5;
-			margin-top: 3.25rem;
+			margin-top: 3rem;
 		}
 	}
 
@@ -1547,7 +1060,7 @@ body{
 }
 
 
-/* 2. Utility ================================ */
+/* 3. Utility ================================ */
 
 .hidden{
 	display: none;

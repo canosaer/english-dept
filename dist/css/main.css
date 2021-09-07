@@ -134,21 +134,6 @@ table {
   border-spacing: 0;
 }
 
-/* 
-==============================================
-CONTENT:	English Department
-AUTHOR:		Eric Canosa
-==============================================
-
-TABLE OF CONTENTS:
-
-0. Initialization
-1. Appearance
-2. Utility
-
-==============================================
-*/
-/* 0. Initialization ========================= */
 :root {
   --heading-font: "Spectral", serif;
   --emory-blue: rgb(1, 33, 105);
@@ -158,28 +143,6 @@ TABLE OF CONTENTS:
   --yellow: rgb(242, 169, 0);
   --gray: rgb(65, 71, 81);
   --light-yellow: rgba(242, 169, 0, 0.7);
-}
-
-/* 1. Appearance ============================= */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  font-family: "Noto Sans", sans-serif;
-}
-
-.display-grid {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-rows: auto;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  position: relative;
 }
 
 .intro {
@@ -787,6 +750,45 @@ body {
     -ms-grid-column-align: center;
     place-self: flex-end center;
   }
+}
+
+/* 
+==============================================
+CONTENT:	English Department
+AUTHOR:		Eric Canosa
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Initialization
+1. General Styles
+2. Partials
+3. Utility
+
+==============================================
+*/
+/* 0. Initialization ========================= */
+/* 2. Partials ================================ */
+/* 1. General Styles ============================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.display-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
 }
 
 .overview {
@@ -2136,9 +2138,13 @@ body {
     align-self: flex-end;
   }
 }
+.biography__subheading_books {
+  font-size: 1.75rem;
+  font-weight: unset;
+}
 @media (min-width: 1024px) {
   .biography__subheading_books {
-    margin-bottom: 0.75rem;
+    font-size: 2.5rem;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
@@ -2168,6 +2174,7 @@ body {
     grid-row: 2/5;
     margin-top: 10rem;
     margin-bottom: unset;
+    z-index: 0;
   }
 }
 @media (min-width: 1024px) {
@@ -2178,7 +2185,7 @@ body {
     -ms-grid-row: 4;
     -ms-grid-row-span: 1;
     grid-row: 4/5;
-    margin-top: 3.25rem;
+    margin-top: 3rem;
   }
 }
 .biography__area, .biography__links-item, .biography__degree {
@@ -2232,7 +2239,7 @@ body {
   }
 }
 
-/* 2. Utility ================================ */
+/* 3. Utility ================================ */
 .hidden {
   display: none;
 }
