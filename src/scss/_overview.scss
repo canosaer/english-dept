@@ -1,0 +1,38 @@
+@use 'variables';
+@use 'mixins';
+
+.overview{
+	@include mixins.default-grid;
+	padding: 0 2rem;
+	margin-bottom: 5rem;
+	max-width: 80rem;
+	justify-self: center;
+
+	&__heading{
+		@include mixins.heading-format;
+		color: rgb(1, 33, 105);
+		font-size: 2.25rem;
+		margin-bottom: 1.5rem;
+	}
+
+	&__bold-text{
+		@include mixins.default-bold-text;
+	}
+
+	&__text{
+		color: rgba(0,0,0, 0.8);
+		line-height: 1.5;
+		font-size: 1.15rem;
+		text-align: center;
+		margin-bottom: 1.25rem;
+
+		@include mixins.medium-screen{
+			font-size: 1.35rem;
+		}
+	}
+
+	&__link{
+		color: var(--emory-blue);
+		font-weight: bold;
+	}
+}

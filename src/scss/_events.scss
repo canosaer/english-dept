@@ -1,0 +1,144 @@
+@use 'variables';
+@use 'mixins';
+
+.events{
+	@include mixins.default-grid;
+	position: relative;
+	
+	margin: 0 3% 5rem;
+
+	@include mixins.medium-screen{
+		grid-template-columns: 1fr minmax(0,75rem) 1fr;
+	}
+
+	&__heading{
+		@include mixins.heading-format;
+		width: 10.5rem;
+		justify-self: center;
+		position: absolute;
+		font-size: 1.85rem;
+		transform: scale(1, 1.1);
+		margin-bottom: 1rem;
+		color: var(--emory-blue);
+		top: -1rem;
+		background: white;
+
+		@include mixins.landscape{
+			font-size: 2.75rem;
+			width: 25rem;
+			top: -1.5rem;
+		}
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
+	}
+
+	&__bold-text{
+		@include mixins.default-bold-text;
+
+		@include mixins.landscape{
+			display: unset;
+		}
+	}
+
+	&__card-display{
+		@include mixins.default-grid;
+		padding: 5rem 3%;
+		grid-column-gap: 3%;
+		grid-row-gap: 2.3rem;
+		justify-content: center;
+    	grid-template-columns: repeat(auto-fit, minmax(15rem, 0.9fr));
+		border: 3px solid var(--emory-blue);
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
+	}
+
+	&__card{
+		@include mixins.default-grid;
+		padding: 2.75rem 0rem 0rem;
+		position: relative;
+		grid-template-columns: 1fr minmax(5rem, 0.2fr);
+		grid-auto-rows: max-content;
+		
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 1.25rem;
+			background: var(--light-yellow);
+		}
+	}
+
+	&__day{
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 0.75rem;
+		
+	}
+
+	&__month{
+		color: var(--emory-blue);
+		font-size: 1.75rem;
+		font-weight: bold;
+		grid-column: 1/2;
+		font-family: var(--heading-font);
+		padding-bottom: 0.1rem;
+
+	}
+
+	&__date{
+		grid-column: 2/3;
+		grid-row: 1/3;
+		place-self: center flex-end;
+		color: var(--gray);
+		font-family: var(--heading-font);
+		font-size: 3rem;
+	}
+
+	&__link{
+		margin-top: 1.5rem;
+		grid-column: 1/-1;
+		@include mixins.link-format;
+		position: relative;
+
+		&:before{
+			content: "";
+			position: absolute;
+			border-top: dashed 3px var(--light-yellow);
+			width: 100%;
+			top: -1rem;
+		}
+	}
+
+	&__button{
+		background: var(--emory-blue);
+		color: white;
+		text-transform: uppercase;
+		padding: 1rem 0rem;
+		border-radius: 0.8rem;
+		font-weight: bold;
+		transition: all 200ms ease-in-out;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -1.5rem;
+		width: 19.1rem;
+		text-align: center;
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
+
+		&:hover{
+			color: var(--yellow);
+			filter: brightness(1.1);
+		}
+	}
+
+}

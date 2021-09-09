@@ -1,0 +1,184 @@
+@use 'variables';
+@use 'mixins';
+
+.biography{
+	@include mixins.default-grid;
+	position: relative;
+	padding: 6rem 1.5rem 0;
+	color: var(--gray);
+
+	@include mixins.medium-screen{
+		grid-template-columns: minmax(0,0.7fr) minmax(0,0.3fr);
+		padding: 8rem 5rem 0;
+	}
+
+	&:before{
+		content: "";
+		position: absolute;
+		border-bottom: dashed 3px var(--light-yellow);
+		width: 100%;
+		top: 0;
+	}
+
+	&:after{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 1.5rem;
+		top: 1.15rem;
+		background: var(--light-yellow);
+	}
+
+	&__heading{
+		font-size: 1.75rem;
+		@include mixins.stretch-font;
+		margin-bottom: 0.75rem;
+		grid-row: 5/6;
+
+		@include mixins.medium-screen{
+			grid-column: 1/2;
+			grid-row: 1/2;
+			font-size: 2.5rem;
+		}
+	}
+
+	&__text{
+		line-height: 1.5;
+		margin-bottom: 2.75rem;
+		font-size: 1.05rem;
+		grid-row: 6/7;
+
+		@include mixins.medium-screen{
+			grid-column: 1/2;
+			grid-row: 2/4;
+			padding-right: 3rem;
+		}
+	}
+
+	&__subheading{
+		font-size: 1.35rem;
+		font-weight: bold;
+		margin-bottom: 0.75rem;
+		@include mixins.stretch-font;
+		
+
+		@include mixins.medium-screen{
+			font-size: 1.5rem;
+		}
+
+		&_education{
+			font-weight: unset;
+			font-size: 1.75rem;
+			@include mixins.stretch-font;
+
+			@include mixins.medium-screen{
+				grid-column:1/2;
+				grid-row: 4/5;
+				font-size: 2.5rem;
+			}
+		}
+
+		&_links{
+			@include mixins.medium-screen{
+				grid-column: 2/3;
+				grid-row: 2/5;
+				margin-top: 8.15rem;
+			}
+		}
+
+		&_areas{
+			@include mixins.medium-screen{
+				grid-column: 2/3;
+				grid-row: 1/2;
+				align-self: flex-end;
+			}
+		}
+
+		&_books{
+			font-size: 1.75rem;
+			font-weight: unset;
+
+			@include mixins.medium-screen{
+				font-size: 2.5rem;
+				grid-column: 1/2;
+			}
+		}
+	}
+
+	&__area-list, &__links-list, &__education-list{
+		margin-bottom: 2.75rem;
+	}
+
+	&__area-list{
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+			grid-row: 2/5;
+			margin-bottom: unset;
+		}
+	}
+
+
+	&__links-list{
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+			grid-row: 2/5;
+			margin-top: 10rem;
+			margin-bottom: unset;
+			z-index: 0;
+		}
+	}
+
+	&__education-list{
+		@include mixins.medium-screen{
+			grid-column:1/2;
+			grid-row: 4/5;
+			margin-top: 3rem;
+		}
+	}
+
+	&__area, &__links-item, &__degree{
+		margin-bottom: 0.5rem;
+	}
+
+	&__link{
+		color: var(--emory-blue);
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	&__social-icon{
+		margin-right: 0.5rem;
+	}
+
+	&__book-link{
+		@include mixins.image-slot;
+		padding-bottom: 150%;
+	}
+
+	&__book-image{
+		@include mixins.default-img;
+		@include mixins.cover-parent;
+		
+	}
+
+	&__book-item{
+		@include mixins.default-grid;
+	}
+
+	&__book-list{
+		@include mixins.default-grid;
+		grid-template-columns: repeat(auto-fit, minmax(10.5rem, 0.15fr));
+		gap: 1rem;
+		margin-bottom: 5rem;
+
+		@include mixins.medium-screen{
+			grid-column: 1/-1;
+		}
+	}
+
+	
+
+	
+}

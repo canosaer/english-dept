@@ -1,0 +1,172 @@
+@use 'variables';
+@use 'mixins';
+
+.outro{
+	@include mixins.default-grid;
+	position: relative;
+	background: rgb(65, 71, 81);
+	overflow: hidden;
+
+	&__link{
+		@include mixins.default-grid;
+		padding: 4rem 1rem 0;
+		color: white;
+		place-self: center center;
+		grid-template-rows: max-content;
+	}
+
+	&__logo{
+		grid-row: 1/3;
+		grid-column: 1/2;
+		@include mixins.default-img;
+		width: 5rem;
+		margin-right: 15rem;
+	}
+
+	&__heading{
+		grid-row: 1/2;
+		grid-column: 1/2;
+		font-family: var(--heading-font);
+		font-size: 1.15rem;
+		text-transform: uppercase;
+		letter-spacing: -0.05rem;
+		line-height: 1.1;
+		margin: 0 0 0 6rem;
+
+	}
+
+	&__subheading{
+		grid-row: 2/3;
+		grid-column: 1/2;
+		font-size: 0.9rem;
+		font-weight: bold;
+		margin: 0.15rem 0 auto 6.1rem;
+	}
+
+	&__emory{
+		@include mixins.outro-text;
+		font-size: 1rem;
+		font-weight: bold;
+		position: relative;
+		margin-top: 5rem;
+
+		&:before{
+			content: "";
+			width: 100%;
+			left: 50%;
+			top: -2rem;
+			position: absolute;
+			border-bottom: 1px solid white;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__about{
+		@include mixins.outro-text;
+		@include mixins.outro-link;
+		margin-top: 1rem;
+	}
+
+	&__emory-home{
+		@include mixins.outro-text;
+		@include mixins.outro-link;
+	}
+
+	&__campus-map{
+		@include mixins.outro-text;
+		@include mixins.outro-link;
+	}
+
+	&__get-directions{
+		@include mixins.outro-text;
+		@include mixins.outro-link;
+	}
+
+	&__address{
+		@include mixins.outro-text;
+		margin-top: 2.9rem;
+	}
+
+	&__email{
+		@include mixins.outro-text;
+		margin-top: 2.9rem;
+	}
+
+	&__city-state-zip{
+		@include mixins.outro-text;
+		margin-top: 0.75rem;
+	}
+
+	&__phone{
+		@include mixins.outro-text;
+		margin-top: 0.75rem;
+	}
+
+	&__email-link{
+		color: white;
+		text-decoration: none;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	&__bold-text{
+		font-weight: bold;
+	}
+
+}
+
+.social-media{
+	display: flex;
+	justify-content: center;
+	margin: 2rem 0 4.25rem;
+
+	&__icon{
+		color: white;
+		opacity: 0.8;
+		font-size: 2rem;
+		margin-right: 1.6rem;
+		justify-self: center;
+
+		&:hover{
+			opacity: 1;
+		}
+	}
+}
+
+.fa-twitter{
+	margin-right: 0;
+}
+
+.bottom-row{
+	@include mixins.default-grid;
+	width: 100%;
+	position: relative;
+	padding-bottom: 5rem;
+
+	&__copyright{
+		@include mixins.outro-text;
+		font-size: 0.85rem;
+		opacity: 0.7;
+		line-height: 1.4;
+	}
+
+	&:before{
+		content: "";
+		position: absolute;
+		width: 95%;
+		top: -2rem;
+		left: 50%;
+		transform: translate(-50%);
+		border-top: 1px solid white;
+	}
+
+	&__back-to-top{
+		@include mixins.outro-text;
+		@include mixins.outro-link;
+		font-size: 0.85rem;
+		opacity: 0.7;
+		margin-top: 1.5rem;
+	}
+}

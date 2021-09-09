@@ -1,0 +1,81 @@
+@use 'variables';
+@use 'mixins';
+
+.people-page .overview{
+	margin: 5rem 0;
+}
+
+.people{
+	@include mixins.default-grid;
+	@include mixins.generic-display-section;
+
+	@include mixins.medium-screen{
+		grid-template-columns: 1fr minmax(0,80rem) 1fr;
+	}
+
+	&__heading{
+		@include mixins.heading-format;
+		@include mixins.section-heading-format;
+
+		@include mixins.landscape{
+			@include mixins.generic-landscape-heading;
+		}
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
+		
+	}
+
+	&__bold-text{
+		@include mixins.default-bold-text;
+
+		@include mixins.landscape{
+			display: unset;
+		}
+	}
+
+	&__card-display{
+		@include mixins.default-grid;
+		@include mixins.generic-card-display;
+		grid-template-columns: repeat(auto-fit, minmax(21.35rem, 0.4fr));
+
+		@include mixins.medium-screen{
+			grid-column: 2/3;
+		}
+	}
+
+	&__card{
+		@include mixins.image-slot;
+		padding-bottom: 100%;
+
+		&:hover .people__text{
+			height: 50%;
+		}
+
+		&:before{
+			@include mixins.generic-dotted-line;
+		}
+
+		&:after{
+			@include mixins.generic-blue-bar;
+		}
+	}
+
+	&__image{
+		@include mixins.cover-parent;
+		@include mixins.default-img;
+	}
+
+	&__text{
+		@include mixins.generic-text;
+	}
+
+	&__subheading{
+		@include mixins.generic-subheading;
+	}
+
+	&__caption{
+		@include mixins.generic-caption;
+	}
+}

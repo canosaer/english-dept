@@ -752,45 +752,6 @@ table {
   }
 }
 
-/* 
-==============================================
-CONTENT:	English Department
-AUTHOR:		Eric Canosa
-==============================================
-
-TABLE OF CONTENTS:
-
-0. Initialization
-1. General Styles
-2. Partials
-3. Utility
-
-==============================================
-*/
-/* 0. Initialization ========================= */
-/* 2. Partials ================================ */
-/* 1. General Styles ============================= */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  font-family: "Noto Sans", sans-serif;
-}
-
-.display-grid {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-rows: auto;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  position: relative;
-}
-
 .overview {
   display: -ms-grid;
   display: grid;
@@ -2237,6 +2198,45 @@ body {
   .biography__book-list {
     grid-column: 1/-1;
   }
+}
+
+/* 
+==============================================
+CONTENT:	English Department
+AUTHOR:		Eric Canosa
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Initialization
+1. General
+2. Partials
+3. Utility
+
+==============================================
+*/
+/* 0. Initialization ========================= */
+/* 2. Partials =============================== */
+/* 1. General ================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.display-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
 }
 
 /* 3. Utility ================================ */
