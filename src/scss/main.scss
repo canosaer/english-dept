@@ -7,8 +7,8 @@ AUTHOR:		Eric Canosa
 TABLE OF CONTENTS:
 
 0. Initialization
-1. General
-2. Partials
+1. Partials
+2. General
 3. Utility
 
 ==============================================
@@ -19,7 +19,7 @@ TABLE OF CONTENTS:
 @use 'variables';
 @use 'mixins';
 
-/* 2. Partials =============================== */
+/* 1. Partials =============================== */
 @use 'header';
 @use 'hero';
 @use 'statistics';
@@ -35,7 +35,7 @@ TABLE OF CONTENTS:
 
 
 
-/* 1. General ================================ */
+/* 2. General ================================ */
 
 *, *::before, *::after {
 	box-sizing: border-box;
